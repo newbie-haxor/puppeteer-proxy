@@ -15,6 +15,7 @@ import {
 } from 'serialize-error';
 import HttpProxyAgent from 'http-proxy-agent';
 import HttpsProxyAgent from 'https-proxy-agent';
+import SocksProxyAgent from 'socks-proxy-agent';
 import {
   formatPuppeteerCookieAsToughCookie,
 } from '../utilities';
@@ -122,6 +123,7 @@ const proxyRequest = async (proxyRequestConfiguration: ProxyRequestConfiguration
     agent = {
       http: new HttpProxyAgent(proxyUrl.http || proxyUrl),
       https: new HttpsProxyAgent(proxyUrl.https || proxyUrl),
+      socks: new SocksProxyAgent(proxyUrl.socks || proxyUrl),
     };
   }
 
