@@ -8,6 +8,9 @@ import {
 import {
   Agent as HttpsAgent,
 } from 'https';
+import {
+  SocksProxyAgent as SocksAgent,
+} from 'socks-proxy-agent';
 import type {
   Page,
   Request,
@@ -16,6 +19,7 @@ import type {
 export interface ProxyUrl {
   http?: string,
   https?: string,
+  socks?: string,
 }
 
 export type HeadersType = {
@@ -30,7 +34,7 @@ export type HeadersType = {
  * @property request Instance of Puppeteer Request.
  */
 export type ProxyRequestConfigurationType = {|
-  +agent?: HttpAgent | HttpsAgent,
+  +agent?: HttpAgent | HttpsAgent | SocksAgent,
   +page: Page,
   +proxyUrl?: ProxyUrl | string,
   +request: Request,
