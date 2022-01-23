@@ -24,6 +24,7 @@
     "https-proxy-agent": "^5.0.0",
     "roarr": "^2.15.3",
     "serialize-error": "^7.0.1",
+    "socks-proxy-agent": "^6.1.1",
     "tough-cookie": "^4.0.0"
   },
   "description": "Proxies Puppeteer Page requests.",
